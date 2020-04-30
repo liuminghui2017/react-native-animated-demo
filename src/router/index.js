@@ -18,6 +18,7 @@ import diffClamp1 from '../pages/diffClamp1';
 import diffClamp2 from '../pages/diffClamp2';
 import Modulo from '../pages/Modulo';
 import Event from '../pages/Event';
+import Tracking from '../pages/Tracking';
 
 const MainStack = createStackNavigator();
 
@@ -40,6 +41,7 @@ function Router() {
         <MainStack.Screen name="diffClamp2" component={diffClamp2} />
         <MainStack.Screen name="Modulo" component={Modulo} />
         <MainStack.Screen name="Event" component={Event} />
+        <MainStack.Screen name="Tracking" component={Tracking} />
       </MainStack.Navigator>
     </NavigationContainer>
   );

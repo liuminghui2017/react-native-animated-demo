@@ -58,6 +58,13 @@ export default class Home extends Component {
             onPress={() => this.props.navigation.navigate('Event')}
           />
         </View>
+
+        <View style={styles.button}>
+          <Button
+            title="追逐"
+            onPress={() => this.props.navigation.navigate('Tracking')}
+          />
+        </View>
       </ScrollView>
     );
   }

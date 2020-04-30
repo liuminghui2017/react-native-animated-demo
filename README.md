@@ -107,3 +107,39 @@ static diffClamp(a, min, max)
 ```javascript
 static event(argMapping, config?) // 可以将一些事件的参数直接映射到动画值，从而用事件驱动动画，具体看demo
 ```
+
+### 进阶
+- 跟随
+```javascript
+// 可以把A动画的动画值，赋值给B动画的toValue，从而实现让B动画追随A动画的效果
+
+let a = new Animated.Value(0);
+let b = new Animated.Value(0);
+
+let animA1 = Animated.timing(a, {
+  toValue: 200,
+  duration: 500,
+})
+
+let animA2 = Animated.timing(a, {
+  toValue: 0,
+  duration: 500,
+})
+
+let animB = Animated.timing(b, {
+  toValue: a,
+  duration: 0,
+})
+
+// 开启跟随, 只需设置一次，此后B会一直跟随着A动画
+animB.start();
+
+// 启动A动画
+animA1.start();
+animA2.start();
+// ...更多A动画
+
+// 关闭追随
+b.stopAnimation();
+
+```
